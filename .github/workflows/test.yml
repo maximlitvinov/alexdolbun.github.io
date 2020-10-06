@@ -6,6 +6,7 @@ jobs:
   my-testing:
      runs-on: ubuntu-latest
        steps:
+       
       - name: Print a greeting
          run: echo "Hello World Testing Job"
 
@@ -14,5 +15,6 @@ jobs:
       runs-on: ubuntu-latest
         needs: [my-testing]
         steps:
+        
        - name:  Print a greeting 
           run: echo "Hello World Deploy Job"  
