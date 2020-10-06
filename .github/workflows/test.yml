@@ -3,15 +3,18 @@ name: Greeting from Max
 on: push
 
 jobs:
-  my-job:
-    name: My Job
-    runs-on: ubuntu-latest
-    steps:
-    - name: Print a greeting
-      env:
-        MY_VAR: Hi there! My name is
-        FIRST_NAME: Max
-        MIDDLE_NAME: Valentinovich
-        LAST_NAME: Litvinov
-      run: |
-        echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+  my-testing:
+        name: My Job Testing
+     runs-on: ubuntu-latest
+       steps:
+      - name: Print a greeting
+         run: echo "Hello World Testing Job"
+
+
+    my_deploy:
+      name: My Job Deploy
+      runs-on: ubuntu-latest
+        needs: [my-testing]
+        steps:
+       - name:  Print a greeting 
+          run: echo "Hello World Deploy Job"  
